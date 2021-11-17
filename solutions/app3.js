@@ -31,6 +31,6 @@ const getMovies = (url = '') => {
  * CSAK A 34. SORBAN DOLGOZZ!
  */
 export {
-    
+    getMovies,
     getMovieData,
 }

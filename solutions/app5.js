@@ -10,7 +10,10 @@ const getProductData = () => productData;
  * @returns {[{name: string}]} a name alapján rendezett tömb
  */
 const sortProducts = (products = [{ name: '' }]) => {
-    return products.sort((product1, product2) => product1.name.localeCompare(product2.name));
+    products.sort((obj1, obj2) => {
+        if (obj1.name < obj2.name) return -1;
+        if (obj1.name > obj2.name) return 1;
+    })
 };
 
 /**
