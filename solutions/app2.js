@@ -20,7 +20,7 @@ const getUserData = () => userData;
  */
 const getUsers = (url = '') => {
     fetch(url)
-        .then((data) => data.json)
+        .then((data) => data.json())
         .then(data => userData = data)
         .catch(
             () => console.log(`Error: ${url} is not found!`),

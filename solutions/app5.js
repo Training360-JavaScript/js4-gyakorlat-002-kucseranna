@@ -10,10 +10,8 @@ const getProductData = () => productData;
  * @returns {[{name: string}]} a name alapján rendezett tömb
  */
 const sortProducts = (products = [{ name: '' }]) => {
-    products.sort((obj1, obj2) => {
-        if (obj1.name < obj2.name) return -1;
-        if (obj1.name > obj2.name) return 1;
-    })
+    return products.sort((product1, product2) =>
+    product1.name.localeCompare(product2.name));
 };
 
 /**
@@ -43,7 +41,7 @@ const sortProducts = (products = [{ name: '' }]) => {
  */
  const getProducts = (url ='') => {
     fetch(url)
-    .then((data) => data.json)
+    .then((data) => data.json())
     .then((data) => productData = sortProducts(data))
     .catch(
         () => console.log(`Error: ${url} is not found!`),
